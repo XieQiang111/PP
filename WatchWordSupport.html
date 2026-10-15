@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>手腕单词 - 技术支持</title>
+  <meta name="description" content="手腕单词 Apple Watch App 技术支持、常见问题与联系方式。">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #5f6b7a;
+      --line: #d9e0ea;
+      --accent: #1f7a5a;
+      --accent-strong: #155d44;
+      --chip: #e8f5ef;
+      --shadow: 0 18px 45px rgba(23, 32, 51, 0.10);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10151d;
+        --panel: #18212c;
+        --text: #eef3f8;
+        --muted: #a9b6c5;
+        --line: #2b3948;
+        --accent: #73d6aa;
+        --accent-strong: #a0ebc8;
+        --chip: #173629;
+        --shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(31, 122, 90, 0.16), transparent 34rem),
+        linear-gradient(135deg, var(--bg), #eef3f7 45%, var(--bg));
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(115, 214, 170, 0.14), transparent 34rem),
+          linear-gradient(135deg, var(--bg), #141b25 45%, var(--bg));
+      }
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .hero {
+      display: grid;
+      gap: 18px;
+      padding: 40px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      width: fit-content;
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: var(--accent-strong);
+      background: var(--chip);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+    }
+
+    h2 {
+      margin-bottom: 14px;
+      font-size: 22px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .intro {
+      max-width: 680px;
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    section {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    a {
+      color: var(--accent-strong);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    dl {
+      display: grid;
+      gap: 18px;
+      margin: 0;
+    }
+
+    dt {
+      margin-bottom: 4px;
+      font-weight: 800;
+    }
+
+    dd {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        width: min(100% - 24px, 920px);
+        padding: 28px 0;
+      }
+
+      .hero,
+      section {
+        padding: 24px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div class="badge">Apple Watch App Support</div>
+      <h1>手腕单词 技术支持</h1>
+      <p class="intro">感谢使用手腕单词。如果你在 Apple Watch 上进行单词练习时遇到问题，或希望反馈建议，可以通过本页提供的方式联系我们。</p>
+    </header>
+
+    <div class="grid">
+      <section>
+        <h2>联系方式</h2>
+        <p>请发送邮件至 <a href="mailto:support@example.com">support@example.com</a>，并尽量附上设备型号、watchOS 版本、App 版本和问题截图。</p>
+      </section>
+
+      <section>
+        <h2>反馈建议</h2>
+        <p>如果你希望增加词库、优化关卡体验或反馈错词内容，也欢迎通过邮件告诉我们。</p>
+      </section>
+
+      <section class="full">
+        <h2>常见问题</h2>
+        <dl>
+          <div>
+            <dt>App 是否需要联网？</dt>
+            <dd>不需要。手腕单词的词库内置在 App 中，核心练习功能可直接在 Apple Watch 上使用。</dd>
+          </div>
+          <div>
+            <dt>学习进度和错词记录保存在哪里？</dt>
+            <dd>学习进度、设置和错词记录保存在你的设备本地，用于继续学习和复习。</dd>
+          </div>
+          <div>
+            <dt>为什么听不到发音或提示音？</dt>
+            <dd>请检查 Apple Watch 的静音模式、音量设置以及当前是否连接蓝牙耳机。</dd>
+          </div>
+          <div>
+            <dt>如何重置学习记录？</dt>
+            <dd>如 App 内提供重置入口，可在设置页操作；如果没有看到相关选项，请通过邮件联系我们。</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="full">
+        <h2>隐私说明</h2>
+        <ul>
+          <li>手腕单词不要求注册账号。</li>
+          <li>App 不收集个人身份信息。</li>
+          <li>学习进度、错词记录和偏好设置主要保存在设备本地。</li>
+          <li>如需完整隐私政策，请访问 <a href="privacy.html">隐私政策</a>。</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>© 2026 手腕单词. All rights reserved.</footer>
+  </main>
+</body>
+</html>
