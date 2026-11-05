@@ -59,7 +59,7 @@
 					<bdt class="statement-end-if-in-editor"></bdt>
 				</span></span></strong></div>
 	<div><span style="color: rgb(127, 127, 127);"><strong><span style="font-size: 15px;"><span
-						data-custom-class="subtitle">Last updated <bdt class="question">February 26, 2026</bdt>
+						data-custom-class="subtitle">Last updated <bdt class="question">November 5, 2026</bdt>
 						</span></span></strong></span></div>
 	<div><br></div>
 	<div><br></div>
@@ -7682,27 +7682,41 @@
 																																																				style="line-height: 1.5;">
 																																																				<br>
 																																																			</div>
-																																																			<div id="accessibility" style="line-height: 1.5;">
-																																																				<span style="font-size: 15px;"><strong><span data-custom-class="heading_1">
-																																																					<h2>11. ACCESSIBILITY SERVICE API DISCLOSURE</h2>
-																																																				</span></strong></span>
-																																																				<span data-custom-class="body_text">
-																																																					Our application, App2VR, includes an interactive compatibility feature designed specifically for the immersive Virtual Reality (VR) stereoscopic experience. To ensure that external input devices function correctly when the full-screen VR visual overlay is active, the application requests the use of the Android AccessibilityService API.
-																																																				</span>
-																																																			</div>
-																																																			<div style="line-height: 1.5;"><br></div>
-																																																			<ul>
-																																																				<li data-custom-class="body_text" style="line-height: 1.5;">
-																																																					<span style="font-size: 15px;"><strong>Purpose of Use:</strong> It is used solely to intercept and route key events from external controllers (such as gamepads and keyboards) through the VR visual overlay to the underlying active apps. It also monitors physical volume keys (e.g., double-presses of Volume Up/Down) as a hardware-based "safety escape/minimize" mechanism when normal touch inputs are blocked by the VR panel.</span>
-																																																				</li>
-																																																			</ul>
-																																																			<div style="line-height: 1.5;"><br></div>
-																																																			<ul>
-																																																				<li data-custom-class="body_text" style="line-height: 1.5;">
-																																																					<span style="font-size: 15px;"><strong>Data Privacy & Non-Collection:</strong> We have strictly disabled screen content retrieval within the API configuration. We <strong>DO NOT</strong> read screen text, app content, notifications, typed text, passwords, or accessibility node data. We <strong>DO NOT</strong> collect, store, track, or transmit any personal data or private user information through this service. All intercepted key events are processed locally in real-time solely for routing purposes and are never saved or shared.</span>
-																																																				</li>
-																																																			</ul>
-																																																			<div style="line-height: 1.5;"><br></div>
+    <div id="accessibility" style="line-height: 1.5;">
+        <span style="font-size: 15px;"><strong><span data-custom-class="heading_1">
+            <h2>11. ACCESSIBILITY SERVICE API DISCLOSURE</h2>
+        </span></strong></span>
+        <span data-custom-class="body_text">
+            App2VR includes an interactive compatibility feature for its immersive Virtual Reality (VR) floating display. When the user explicitly enables App2VR in Android Accessibility settings and turns on the accessibility floating-display mode, App2VR uses the Android AccessibilityService API to create an accessibility overlay and to translate supported external input into actions on the content shown beneath the overlay. The service is designed only for this user-initiated compatibility function and is not used to monitor, profile, or control the device without user input.
+        </span>
+    </div>
+    <div style="line-height: 1.5;"><br></div>
+    <ul>
+        <li data-custom-class="body_text" style="line-height: 1.5;">
+            <span style="font-size: 15px;"><strong>Accessibility overlay and touch pass-through:</strong> App2VR creates and manages a full-screen floating VR/3D display using TYPE_ACCESSIBILITY_OVERLAY. By default, the overlay is marked as not touchable and not focusable so that ordinary touch input continues to reach the app displayed underneath it. When the user opens the VR control panel, touch input may be handled by that panel.</span>
+        </li>
+        <li data-custom-class="body_text" style="line-height: 1.5;">
+            <span style="font-size: 15px;"><strong>Gamepad and keyboard input:</strong> App2VR receives key and motion events from connected gamepads, keyboards, and other supported external input devices and uses them to operate the content shown beneath the VR overlay. Supported actions include moving a virtual cursor, click or select (for example, gamepad A or Enter), Back (for example, gamepad B or Delete), directional swipes (for example, the D-pad), zoom, and gyroscope or cursor reset.</span>
+        </li>
+        <li data-custom-class="body_text" style="line-height: 1.5;">
+            <span style="font-size: 15px;"><strong>Virtual cursor actions and user-triggered gestures:</strong> When the user presses a mapped controller or keyboard control, App2VR may use Android's AccessibilityService gesture API (dispatchGesture) to send a click or swipe at the current virtual cursor position, or performGlobalAction(GLOBAL_ACTION_BACK) to perform a Back action. These actions occur only in direct response to the user's input. App2VR does not generate automated taps, swipes, navigation, or other gestures on its own.</span>
+        </li>
+        <li data-custom-class="body_text" style="line-height: 1.5;">
+            <span style="font-size: 15px;"><strong>Safety controls:</strong> App2VR monitors physical volume keys (for example, double-presses of Volume Up or Volume Down) as a hardware-based safety escape, minimize, reset, or guide interaction mechanism when regular touch input is blocked by the VR panel.</span>
+        </li>
+    </ul>
+    <div style="line-height: 1.5;"><br></div>
+    <ul>
+        <li data-custom-class="body_text" style="line-height: 1.5;">
+            <span style="font-size: 15px;"><strong>Data Privacy & Non-Collection:</strong> The service is configured with canRetrieveWindowContent=false. App2VR does not read screen text, app content, notifications, typed text, passwords, or accessibility node data. The service ignores accessibility events and does not inspect the accessibility node tree.</span>
+        </li>
+        <li data-custom-class="body_text" style="line-height: 1.5;">
+            <span style="font-size: 15px;">Key events, motion events, virtual cursor coordinates, and gesture commands are processed locally in real time only to provide the compatibility feature. They are not stored persistently, used for profiling or advertising, or transmitted to us or third parties through this service.</span>
+        </li>
+        <li data-custom-class="body_text" style="line-height: 1.5;">
+            <span style="font-size: 15px;">The service does not collect personal or sensitive data and does not share any data collected through it. The user can disable the accessibility service at any time in Android Settings, which stops the accessibility overlay and input forwarding.</span>
+        </li>
+    </ul>
 																																																			<div id="policyupdates"
 																																																				style="line-height: 1.5;">
 																																																				<span
