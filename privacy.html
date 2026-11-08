@@ -59,7 +59,7 @@
 					<bdt class="statement-end-if-in-editor"></bdt>
 				</span></span></strong></div>
 	<div><span style="color: rgb(127, 127, 127);"><strong><span style="font-size: 15px;"><span
-						data-custom-class="subtitle">Last updated <bdt class="question">November 5, 2026</bdt>
+						data-custom-class="subtitle">Last updated <bdt class="question">November 8, 2026</bdt>
 						</span></span></strong></span></div>
 	<div><br></div>
 	<div><br></div>
@@ -7696,10 +7696,10 @@
             <span style="font-size: 15px;"><strong>Accessibility overlay and touch pass-through:</strong> App2VR creates and manages a full-screen floating VR/3D display using TYPE_ACCESSIBILITY_OVERLAY. By default, the overlay is marked as not touchable and not focusable so that ordinary touch input continues to reach the app displayed underneath it. When the user opens the VR control panel, touch input may be handled by that panel.</span>
         </li>
         <li data-custom-class="body_text" style="line-height: 1.5;">
-            <span style="font-size: 15px;"><strong>Gamepad and keyboard input:</strong> App2VR receives key and motion events from connected gamepads, keyboards, and other supported external input devices and uses them to operate the content shown beneath the VR overlay. Supported actions include moving a virtual cursor, click or select (for example, gamepad A or Enter), Back (for example, gamepad B or Delete), directional swipes (for example, the D-pad), zoom, and gyroscope or cursor reset.</span>
+            <span style="font-size: 15px;"><strong>Gamepad and keyboard input:</strong> App2VR receives key and motion events from connected gamepads, keyboards, and other supported external input devices and uses them to operate the content shown beneath the VR overlay. In App Mode, supported actions include moving a virtual cursor, click or select (for example, gamepad A or Enter), directional swipes (for example, the D-pad), zoom, and gyroscope or cursor reset. Other key presses are ignored while the VR panel is visible.</span>
         </li>
         <li data-custom-class="body_text" style="line-height: 1.5;">
-            <span style="font-size: 15px;"><strong>Virtual cursor actions and user-triggered gestures:</strong> When the user presses a mapped controller or keyboard control, App2VR may use Android's AccessibilityService gesture API (dispatchGesture) to send a click or swipe at the current virtual cursor position, or performGlobalAction(GLOBAL_ACTION_BACK) to perform a Back action. These actions occur only in direct response to the user's input. App2VR does not generate automated taps, swipes, navigation, or other gestures on its own.</span>
+            <span style="font-size: 15px;"><strong>Virtual cursor actions and user-triggered gestures:</strong> When the user presses a mapped controller or keyboard control, App2VR may use Android's AccessibilityService gesture API (dispatchGesture) to send a click, swipe, or zoom gesture at the current virtual cursor or full-screen VR display. These actions occur only in direct response to the user's input. App2VR does not perform global navigation actions and does not generate automated taps, swipes, or other gestures on its own.</span>
         </li>
         <li data-custom-class="body_text" style="line-height: 1.5;">
             <span style="font-size: 15px;"><strong>Safety controls:</strong> App2VR monitors physical volume keys (for example, double-presses of Volume Up or Volume Down) as a hardware-based safety escape, minimize, reset, or guide interaction mechanism when regular touch input is blocked by the VR panel.</span>
@@ -7717,6 +7717,14 @@
             <span style="font-size: 15px;">The service does not collect personal or sensitive data and does not share any data collected through it. The user can disable the accessibility service at any time in Android Settings, which stops the accessibility overlay and input forwarding.</span>
         </li>
     </ul>
+    <div style="line-height: 1.5;"><br></div>
+    <div style="line-height: 1.5;">
+        <span data-custom-class="body_text" style="font-size: 15px;"><strong>Firebase Analytics and Crashlytics (separate from the Accessibility Service):</strong> App2VR uses Firebase Analytics to collect app interaction and paywall events (such as paywall views, plan selections, and purchase start or completion), app/device information, and a Firebase installation identifier, and Firebase Crashlytics to collect crash logs, stack traces, and related diagnostic information. Google Firebase processes this data to help us operate, diagnose, and improve the app. It is not collected through the Accessibility Service. App2VR does not collect or use the Android advertising ID. See Google's Privacy Policy at <a data-custom-class="link" href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.</span>
+    </div>
+    <div style="line-height: 1.5;"><br></div>
+    <div style="line-height: 1.5;">
+        <span data-custom-class="body_text" style="font-size: 15px;"><strong>Screen capture and MediaProjection:</strong> When the user chooses to share the screen or a single app, Android MediaProjection provides the selected screen content, which App2VR processes locally on the device to render the VR view. App2VR does not upload, store, or share captured screen content. The user can stop sharing at any time from the Android notification or within the app.</span>
+    </div>
 																																																			<div id="policyupdates"
 																																																				style="line-height: 1.5;">
 																																																				<span
